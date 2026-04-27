@@ -1,6 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
+import Bonuses from "@/components/Bonuses";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 
 export default function Home() {
   return (
@@ -9,9 +12,9 @@ export default function Home() {
       <Navbar />
 
       {/* BACKGROUND GLOW */}
-      <div className="absolute inset-0">
-        <div className="absolute w-[600px] h-[600px] bg-green-500 opacity-30 blur-[150px] top-[-150px] left-[-150px]" />
-        <div className="absolute w-[500px] h-[500px] bg-purple-500 opacity-30 blur-[150px] bottom-[-150px] right-[-150px]" />
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <div className="absolute w-150 h-150 bg-green-500 opacity-30 blur-[150px] -top-37.5 -left-37.5" />
+        <div className="absolute w-125 h-125 bg-purple-500 opacity-30 blur-[150px] -bottom-37.5 -right-37.5" />
       </div>
 
       {/* HERO */}
@@ -19,6 +22,10 @@ export default function Home() {
 
       {/* FEATURES */}
       <Features />
+
+      <Bonuses />
+      <Testimonials />
+      <FAQ />
 
       {/* HOW IT WORKS */}
       <section className="relative z-10 py-20 px-6 text-center">

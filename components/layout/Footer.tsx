@@ -74,7 +74,7 @@ export default function Footer() {
             </p>
 
             <a
-              href="https://t.me/your_channel"
+              href="https://t.me/nexapoker"
               target="_blank"
               className="inline-block bg-pink-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-pink-700 transition shadow-sm"
             >

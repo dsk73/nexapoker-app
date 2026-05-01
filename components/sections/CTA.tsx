@@ -35,7 +35,7 @@ export default function CTA() {
           className="mt-10"
         >
           <a
-            href="https://t.me/your_channel"
+            href="https://t.me/nexapoker"
             target="_blank"
             className="inline-block px-10 py-4 bg-pink-600 text-white rounded-xl font-medium hover:bg-pink-700 transition shadow-sm"
           >

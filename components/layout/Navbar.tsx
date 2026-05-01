@@ -40,7 +40,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <a
-          href="https://t.me/your_channel"
+          href="https://t.me/nexapoker"
           target="_blank"
           className="hidden md:inline-block bg-pink-600 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-pink-700 transition shadow-sm"
         >
@@ -73,7 +73,7 @@ export default function Navbar() {
           </a>
 
           <a
-            href="https://t.me/your_channel"
+            href="https://t.me/nexapoker"
             target="_blank"
             className="block text-center bg-pink-600 text-white py-3 rounded-lg font-medium"
           >

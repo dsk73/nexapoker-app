@@ -8,6 +8,9 @@ import Bonuses from "@/components/sections/Bonuses";
 import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
+import HowItWorks from "@/components/sections/HowItWorks";
+import Downloads from "@/components/sections/Downloads";
+import Payments from "@/components/sections/Payments";
 
 export default function Home() {
   return (
@@ -21,7 +24,10 @@ export default function Home() {
         <Stats />
         <Features />
         <Bonuses />
+        <Downloads />
+        <Payments />
         <Testimonials />
+        <HowItWorks />
         <FAQ />
         <CTA />
       </div>

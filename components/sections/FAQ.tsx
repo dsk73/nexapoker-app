@@ -7,21 +7,32 @@ const faqs = [
   {
     question: "How do I start playing?",
     answer:
-      "Click on Play Now, join our Telegram channel, and follow the instructions to start playing.",
+      "Click on 'Join Telegram', connect with our team, and you will get complete guidance to start playing instantly.",
+  },
+  {
+    question: "How do deposits work?",
+    answer:
+      "Deposits are handled securely through our Telegram system. You will get payment details from our team and your balance will be updated instantly.",
+  },
+  {
+    question: "How do withdrawals work?",
+    answer:
+      "Withdrawals are processed quickly via our Telegram support. Most payouts are completed within minutes.",
   },
   {
     question: "Is this platform safe?",
     answer:
-      "Yes, we use secure systems to ensure safe gameplay and transactions for all users.",
-  },
-  {
-    question: "How fast are withdrawals?",
-    answer: "Most withdrawals are processed instantly or within a few minutes.",
+      "Yes, we operate with a trusted player base and secure systems to ensure fair gameplay and safe transactions.",
   },
   {
     question: "Do I need experience to play?",
     answer:
-      "No, beginners are welcome. You can start easily and improve as you play.",
+      "No, beginners are welcome. Our team will guide you and you can start easily even if you are new to poker.",
+  },
+  {
+    question: "What bonuses do I get?",
+    answer:
+      "You get a 1st deposit bonus, weekly rakeback, and exclusive rewards using our bonus code.",
   },
 ];
 
@@ -36,7 +47,7 @@ export default function FAQ() {
           Frequently Asked <span className="text-pink-600">Questions</span>
         </h2>
 
-        <p className="text-gray-500 text-center mb-12">
+        <p className="text-gray-600 text-center mb-12">
           Everything you need to know before getting started.
         </p>
 
@@ -47,7 +58,7 @@ export default function FAQ() {
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.08 }}
               viewport={{ once: true }}
               className="border border-gray-200 rounded-xl bg-white overflow-hidden"
             >

@@ -36,21 +36,21 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+          className="mt-10 flex justify-center gap-3 max-w-sm mx-auto sm:max-w-none"
         >
           <a
             href="https://t.me/your_channel"
             target="_blank"
-            className="px-8 py-4 bg-pink-600 text-white rounded-xl font-medium hover:bg-pink-700 transition shadow-sm"
+            className="flex-1 sm:flex-none text-center px-5 py-3 bg-pink-600 text-white rounded-xl font-medium hover:bg-pink-700 transition shadow-sm"
           >
             Play Now
           </a>
 
           <a
             href="#features"
-            className="px-8 py-4 border bg-pink-600 border-gray-300 rounded-xl text-black-700 hover:bg-pink-700 transition"
+            className="flex-1 sm:flex-none text-center px-5 py-3 border bg-pink-600 border-gray-300 rounded-xl text-white hover:bg-pink-700 transition"
           >
-            Explore Games
+            Explore
           </a>
         </motion.div>
       </div>

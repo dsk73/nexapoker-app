@@ -7,17 +7,17 @@ const features = [
   {
     title: "Secure Platform",
     desc: "Advanced security ensures safe gameplay and transactions.",
-    icon: "/icons/secure.svg",
+    icon: "/icons/secure.png",
   },
   {
     title: "Fast Withdrawals",
     desc: "Get your winnings instantly without delays.",
-    icon: "/icons/fast.svg",
+    icon: "/icons/fast.png",
   },
   {
     title: "24/7 Support",
     desc: "We are always here to help you anytime.",
-    icon: "/icons/support.svg",
+    icon: "/icons/support.png",
   },
 ];
 

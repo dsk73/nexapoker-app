@@ -47,7 +47,7 @@ export default function Downloads() {
             {/* DOWNLOAD */}
             <a
               href="#"
-              className="px-6 py-3 border border-gray-300 rounded-xl text-gray-800 hover:bg-gray-100 transition"
+              className="px-6 py-3 bg-pink-600 text-white rounded-xl font-medium hover:bg-pink-700 transition"
             >
               Download APK
             </a>

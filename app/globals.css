@@ -1,10 +1,116 @@
 @import "tailwindcss";
 
-/* optional */
-body {
-  background: black;
-  color: white;
+/* -------------------- */
+/* ROOT THEME VARIABLES */
+/* -------------------- */
+
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+  --primary: #ff2d6f;
+  --accent: #14002e;
 }
+
+/* -------------------- */
+/* BASE RESET */
+/* -------------------- */
+
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* -------------------- */
+/* TYPOGRAPHY */
+/* -------------------- */
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* -------------------- */
+/* SELECTION */
+/* -------------------- */
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* -------------------- */
+/* SCROLLBAR (SUBTLE) */
+/* -------------------- */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5f5;
+  border-radius: 10px;
+}
+
+/* -------------------- */
+/* IMAGE FIX */
+/* -------------------- */
+
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
+/* -------------------- */
+/* LINK RESET */
+/* -------------------- */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* -------------------- */
+/* CARD BASE STYLE */
+/* -------------------- */
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* -------------------- */
+/* BUTTON BASE */
+/* -------------------- */
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: #16a34a;
 }

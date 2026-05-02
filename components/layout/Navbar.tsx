@@ -8,7 +8,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[#14002e]/90 backdrop-blur-md border-b border-white/10">
+    <header className="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* LOGO */}
         <Link href="/">
@@ -18,12 +18,12 @@ export default function Navbar() {
             width={160}
             height={40}
             priority
-            className="h-8 w-auto"
+            className="h-10 w-auto"
           />
         </Link>
 
         {/* DESKTOP MENU */}
-        <nav className="hidden md:flex items-center gap-8 text-sm text-white/70">
+        <nav className="hidden md:flex items-center gap-8 text-lg text-white/70">
           <a href="#" className="hover:text-white transition">
             Home
           </a>
@@ -42,7 +42,7 @@ export default function Navbar() {
         <a
           href="https://t.me/nexapoker"
           target="_blank"
-          className="hidden md:inline-block bg-pink-600 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-pink-700 transition shadow-sm"
+          className="hidden md:inline-block bg-pink-600 text-white px-5 py-2 rounded-lg text-md font-medium hover:bg-pink-700 transition shadow-sm"
         >
           Play Now
         </a>

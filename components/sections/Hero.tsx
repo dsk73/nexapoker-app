@@ -40,7 +40,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="mt-6 text-white text-base md:text-lg"
+            className="mt-8 text-white text-base md:text-lg"
           >
             Play daily tournaments, get <strong>1st deposit bonus</strong> +
             <strong> weekly rakeback</strong>, and enjoy fast deposits &
@@ -52,7 +52,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-sm text-white mt-4"
+            className="text-sm text-white mt-6"
           >
             Trusted by 1000+ players • Instant withdrawals • 24/7 support
           </motion.p>
@@ -85,7 +85,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="mt-6 text-sm text-pink-400 font-medium"
+            className="mt-8 text-sm text-pink-400 font-medium"
           >
             🎁 Use Bonus Code: <span className="font-semibold">NEXA100</span>
           </motion.div>

@@ -29,50 +29,56 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section className="py-24 px-6 bg-white">
-      <div className="max-w-7xl mx-auto text-center">
+      <div className="max-w-7xl mx-auto">
         {/* HEADING */}
-        <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-6">
-          How It <span className="text-pink-600">Works</span>
-        </h2>
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-4">
+            How It <span className="text-pink-600">Works</span>
+          </h2>
 
-        <p className="text-gray-600 max-w-2xl mx-auto mb-16">
-          Get started in just a few simple steps and begin your poker journey
-          instantly.
-        </p>
+          <p className="text-gray-600 max-w-xl mx-auto text-sm md:text-base">
+            Get started in just a few simple steps and begin your poker journey
+            instantly.
+          </p>
+        </div>
 
-        {/* STEPS */}
-        <div className="grid md:grid-cols-2 gap-10">
+        {/* GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {steps.map((step, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.08 }}
               viewport={{ once: true }}
-              className="flex flex-col md:flex-row items-center gap-6 text-left bg-gray-50 border border-gray-200 rounded-2xl p-6"
+              whileHover={{ y: -6 }}
+              className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
             >
               {/* IMAGE */}
-              <div className="flex-shrink-0">
+              <div className="relative w-full aspect-4/3 overflow-hidden">
                 <Image
                   src={step.image}
                   alt={step.title}
-                  width={120}
-                  height={120}
-                  className="object-contain rounded-lg mx-auto md:mx-0"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
 
-              {/* TEXT */}
-              <div>
-                <div className="text-pink-600 font-semibold mb-1">
+              {/* CONTENT */}
+              <div className="p-4 md:p-5">
+                {/* STEP */}
+                <div className="text-pink-600 font-semibold text-xs mb-1 uppercase tracking-wide">
                   Step {i + 1}
                 </div>
 
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                {/* TITLE */}
+                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">
                   {step.title}
                 </h3>
 
-                <p className="text-gray-600 text-sm leading-relaxed">
+                {/* DESC */}
+                <p className="text-gray-600 text-sm leading-normal">
                   {step.desc}
                 </p>
               </div>
@@ -81,11 +87,11 @@ export default function HowItWorks() {
         </div>
 
         {/* CTA */}
-        <div className="mt-12">
+        <div className="text-center mt-14">
           <a
             href="https://t.me/nexapoker"
             target="_blank"
-            className="inline-block px-8 py-4 bg-pink-600 text-white rounded-xl font-medium hover:bg-pink-700 transition shadow-sm"
+            className="inline-block px-8 py-3 bg-pink-600 text-white rounded-xl font-medium hover:bg-pink-700 transition shadow-lg shadow-pink-500/20"
           >
             Join Telegram Now
           </a>

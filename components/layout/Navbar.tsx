@@ -23,7 +23,7 @@ export default function Navbar() {
         </Link>
 
         {/* DESKTOP MENU */}
-        <nav className="hidden md:flex items-center gap-8 text-lg text-white/70">
+        <nav className="hidden md:flex items-center gap-7 text-md text-white/70">
           <a href="#" className="hover:text-white transition">
             Home
           </a>
@@ -32,6 +32,10 @@ export default function Navbar() {
           </a>
           <a href="#bonuses" className="hover:text-white transition">
             Bonuses
+          </a>
+          
+          <a href="#downloads" className="hover:text-white transition">
+            Download
           </a>
           <a href="#faq" className="hover:text-white transition">
             FAQ
@@ -42,7 +46,7 @@ export default function Navbar() {
         <a
           href="https://t.me/nexapoker"
           target="_blank"
-          className="hidden md:inline-block bg-pink-600 text-white px-5 py-2 rounded-lg text-md font-medium hover:bg-pink-700 transition shadow-sm"
+          className="hidden md:inline-block bg-pink-600 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-pink-700 transition shadow-sm"
         >
           Play Now
         </a>
@@ -67,6 +71,10 @@ export default function Navbar() {
           </a>
           <a href="#bonuses" className="block text-white/70 hover:text-white">
             Bonuses
+          </a>
+          
+          <a href="#downloads" className="block text-white/70 hover:text-white">
+            Download
           </a>
           <a href="#faq" className="block text-white/70 hover:text-white">
             FAQ

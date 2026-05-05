@@ -21,15 +21,15 @@ export default function Home() {
       {/* PAGE CONTENT */}
       <div className="relative z-10">
         <Hero />
-        <Stats />
         <Features />
+        <Stats />
         <Bonuses />
         <Downloads />
         <Payments />
         <Testimonials />
         <HowItWorks />
-        <FAQ />
         <CTA />
+        <FAQ />
       </div>
 
       {/* FOOTER */}

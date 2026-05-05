@@ -7,7 +7,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "NexaPoker",
+  title: "Nexa Poker",
   description: "Play Poker Online - Fast Withdrawals & Real Rewards",
 };
 

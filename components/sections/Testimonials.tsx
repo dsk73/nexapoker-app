@@ -23,51 +23,65 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 px-6 bg-gray-50">
+    <section className="relative py-16 px-6 overflow-hidden bg-[#0a0018]">
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute w-100 h-100 bg-pink-600/15 blur-[120px] -top-25 -right-25" />
+        <div className="absolute w-75 h-75 bg-purple-600/15 blur-[120px] -bottom-25 -left-25" />
+      </div>
+
       <div className="max-w-7xl mx-auto text-center">
         {/* HEADING */}
-        <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-6">
-          What Players <span className="text-pink-600">Say</span>
-        </h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
+        >
+          <span className="text-white!">What Players </span>
+          <span className="bg-linear-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            Say
+          </span>
+        </motion.h2>
 
-        <p className="text-gray-500 max-w-2xl mx-auto mb-16">
+        {/* SUBTEXT */}
+        <p className="text-white! max-w-xl mx-auto mb-10 opacity-80 text-sm md:text-base">
           Trusted by thousands of players across the country.
         </p>
 
         {/* CARDS */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.15 }}
+              transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -6 }}
-              className="bg-white border border-gray-200 rounded-2xl p-8 text-left shadow-sm hover:shadow-md transition"
+              whileHover={{ y: -4 }}
+              className="bg-[#0f001f] border border-white/10 rounded-xl p-5 text-left shadow-sm transition"
             >
               {/* USER */}
-              <div className="flex items-center gap-4 mb-4">
+              <div className="flex items-center gap-3 mb-3">
                 <Image
                   src={item.image}
                   alt={item.name}
                   width={44}
                   height={44}
-                  className="rounded-full object-cover"
+                  className="rounded-full object-cover border border-white/20"
                 />
 
                 <div>
-                  <h4 className="text-sm font-semibold text-gray-900">
+                  <h4 className="text-white! font-semibold text-sm">
                     {item.name}
                   </h4>
 
-                  {/* STARS */}
                   <div className="text-yellow-500 text-xs">★★★★★</div>
                 </div>
               </div>
 
               {/* REVIEW */}
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-white! text-sm leading-normal opacity-90">
                 {item.review}
               </p>
             </motion.div>

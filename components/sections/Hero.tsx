@@ -87,7 +87,7 @@ export default function Hero() {
             transition={{ delay: 0.6 }}
             className="mt-8 text-sm text-pink-400 font-medium"
           >
-            🎁 Use Bonus Code: <span className="font-semibold">NEXA100</span>
+            🎁 Use Bonus Code: <span className="font-semibold">NEXA40</span>
           </motion.div>
         </div>
       </div>

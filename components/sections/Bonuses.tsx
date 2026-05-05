@@ -12,11 +12,11 @@ const bonuses = [
   {
     title: "Referral Bonus",
     desc: "Invite friends and earn rewards instantly.",
-    highlight: "₹500",
+    highlight: "$50",
     accent: "text-purple-700",
   },
   {
-    title: "Daily Rewards",
+    title: "Exclusive Rewards",
     desc: "Play daily and unlock exciting bonuses.",
     highlight: "Daily",
     accent: "text-pink-500",

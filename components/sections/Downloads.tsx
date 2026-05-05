@@ -5,24 +5,41 @@ import Image from "next/image";
 
 export default function Downloads() {
   return (
-    <section id="downloads" className="py-24 px-6 bg-gray-50">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <section
+      id="downloads"
+      className="relative py-16 px-6 overflow-hidden bg-[#0a0018]"
+    >
+      {/* BACKGROUND GLOW */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute w-100 h-100 bg-pink-600/20 blur-[120px] -top-25 -left-25" />
+        <div className="absolute w-75 h-75 bg-purple-600/20 blur-[120px] -bottom-25 -right-25" />
+      </div>
+
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        
         {/* LEFT CONTENT */}
         <div>
+          {/* HEADING */}
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-semibold text-gray-900 mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4"
           >
-            Download & <span className="text-pink-600">Start Playing</span>
+            <span className="text-white">
+              Download &{" "}
+            </span>
+            <span className="bg-linear-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+              Start Playing
+            </span>
           </motion.h2>
 
+          {/* SUBTEXT */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-gray-600 mb-8"
+            className="text-white/80 mb-6 max-w-md"
           >
             Get instant access to our poker platform and start playing real
             money games. Join via Telegram and download the app in seconds.
@@ -33,47 +50,50 @@ export default function Downloads() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap gap-3"
           >
-            {/* TELEGRAM */}
             <a
               href="https://t.me/nexapoker"
               target="_blank"
-              className="px-6 py-3 bg-pink-600 text-white rounded-xl font-medium hover:bg-pink-700 transition shadow-sm"
+              className="px-5 py-2.5 bg-pink-600 text-white rounded-lg font-medium hover:bg-pink-700 transition shadow-lg shadow-pink-500/30"
             >
               Join Telegram
             </a>
 
-            {/* DOWNLOAD */}
             <a
               href="#"
-              className="px-6 py-3 bg-pink-600 text-white rounded-xl font-medium hover:bg-pink-700 transition"
+              className="px-5 py-2.5 border border-white/30 rounded-lg text-white hover:bg-white/10 transition"
             >
               Download APK
             </a>
           </motion.div>
 
           {/* NOTE */}
-          <p className="text-sm text-gray-500 mt-4">
+          <p className="text-sm text-white/60 mt-3">
             *Download link will be provided after joining Telegram
           </p>
         </div>
 
         {/* RIGHT IMAGE */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}
           className="flex justify-center"
         >
-          <Image
-            src="/images/app-preview.png"
-            alt="App Preview"
-            width={300}
-            height={500}
-            className="rounded-2xl shadow-md"
-          />
+          <div className="relative p-0.5 rounded-2xl bg-linear-to-r from-pink-500 to-purple-500">
+            <div className="bg-[#0a0018] rounded-2xl p-1.5">
+              <Image
+                src="/images/app-preview.png"
+                alt="App Preview"
+                width={260}
+                height={460}
+                className="rounded-xl"
+              />
+            </div>
+          </div>
         </motion.div>
+
       </div>
     </section>
   );

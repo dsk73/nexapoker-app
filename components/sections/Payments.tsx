@@ -57,17 +57,6 @@ export default function Payments() {
             </motion.div>
           ))}
         </div>
-
-        {/* CTA */}
-        <div className="mt-12">
-          <a
-            href="https://t.me/nexapoker"
-            target="_blank"
-            className="inline-block px-8 py-4 bg-pink-600 text-white rounded-xl font-medium hover:bg-pink-700 transition shadow-sm"
-          >
-            Start Playing Now
-          </a>
-        </div>
       </div>
     </section>
   );

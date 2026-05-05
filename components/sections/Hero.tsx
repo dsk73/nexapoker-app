@@ -27,7 +27,7 @@ export default function Hero() {
             className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
           >
             <span className="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]">
-              World’s Most Active
+              World’s Most Recreational
             </span>
             <br />
             <span className="bg-linear-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
@@ -73,7 +73,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="#downloads"
+              href="/download"
               className="flex-1 text-center px-5 py-3 border border-white/40 rounded-xl text-white hover:bg-white/10 transition"
             >
               Download

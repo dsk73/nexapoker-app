@@ -58,7 +58,7 @@ export default function Downloads() {
             </a>
 
             <a
-              href="#"
+              href="/download"
               className="px-5 py-2.5 border border-white/30 rounded-lg text-white hover:bg-white/10 transition"
             >
               Download APK
@@ -82,10 +82,10 @@ export default function Downloads() {
             <div className="bg-[#0a0018] rounded-2xl p-1.5">
               <Image
                 src="/images/app-preview.png"
-                alt="App Preview"
-                width={320}
-                height={560}
-                className="rounded-xl w-65 md:w-[320px] h-auto"
+                width={360}
+                height={600}
+                className="w-auto h-auto rounded-xl"
+                alt={"Download App"}
               />
             </div>
           </div>

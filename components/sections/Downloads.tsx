@@ -16,7 +16,6 @@ export default function Downloads() {
       </div>
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-        
         {/* LEFT CONTENT */}
         <div>
           {/* HEADING */}
@@ -26,9 +25,7 @@ export default function Downloads() {
             viewport={{ once: true }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4"
           >
-            <span className="text-white">
-              Download &{" "}
-            </span>
+            <span className="text-white">Download & </span>
             <span className="bg-linear-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
               Start Playing
             </span>
@@ -86,14 +83,13 @@ export default function Downloads() {
               <Image
                 src="/images/app-preview.png"
                 alt="App Preview"
-                width={260}
-                height={460}
-                className="rounded-xl"
+                width={320}
+                height={560}
+                className="rounded-xl w-65 md:w-[320px] h-auto"
               />
             </div>
           </div>
         </motion.div>
-
       </div>
     </section>
   );

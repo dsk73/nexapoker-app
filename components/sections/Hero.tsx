@@ -104,7 +104,7 @@ export default function Hero() {
 
               {/* BONUS BAR */}
               <div className="mt-3 flex justify-center lg:justify-start">
-                <div className="flex w-full max-w-[360px] items-center justify-center rounded-2xl border border-pink-500/20 bg-pink-500/10 px-5 py-3.5 backdrop-blur-md shadow-[0_0_35px_rgba(236,72,153,0.08)]">
+                <div className="flex w-full max-w-90 items-center justify-center rounded-2xl border border-pink-500/20 bg-pink-500/10 px-5 py-3.5 backdrop-blur-md shadow-[0_0_35px_rgba(236,72,153,0.08)]">
                   <span className="mr-3 text-lg">🎁</span>
 
                   <span className="text-sm text-white/75">Use Bonus Code</span>
@@ -136,7 +136,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
-            className="relative hidden h-[600px] items-center justify-center lg:flex"
+            className="relative hidden h-150 items-center justify-center lg:flex"
           >
             {/* MAIN GLOW */}
             <div className="absolute h-125 w-125 rounded-full bg-fuchsia-500/7 blur-[170px]" />
@@ -167,7 +167,7 @@ export default function Hero() {
                   duration: 9,
                   repeat: Infinity,
                 }}
-                className="absolute -left-8 top-16 z-0 h-[390px] w-[250px] rounded-[36px] border border-blue-400/15 bg-[#0b1222]/92 p-6 shadow-[0_0_55px_rgba(59,130,246,0.12)] backdrop-blur-xl"
+                className="absolute -left-8 top-16 z-0 h-97.5 w-62.5 rounded-[36px] border border-blue-400/15 bg-[#0b1222]/92 p-6 shadow-[0_0_55px_rgba(59,130,246,0.12)] backdrop-blur-xl"
               >
                 <div className="flex h-full flex-col justify-between">
                   <span className="text-5xl font-bold text-blue-400">A♠</span>
@@ -196,7 +196,7 @@ export default function Hero() {
                   duration: 8,
                   repeat: Infinity,
                 }}
-                className="relative z-10 h-[425px] w-[270px] rounded-[36px] border border-pink-400/15 bg-[#170d24]/96 p-6 shadow-[0_0_70px_rgba(236,72,153,0.16)] backdrop-blur-xl"
+                className="relative z-10 h-106.25 w-67.5 rounded-[36px] border border-pink-400/15 bg-[#170d24]/96 p-6 shadow-[0_0_70px_rgba(236,72,153,0.16)] backdrop-blur-xl"
               >
                 <div className="flex h-full flex-col justify-between">
                   <span className="text-5xl font-bold text-pink-400">A♥</span>

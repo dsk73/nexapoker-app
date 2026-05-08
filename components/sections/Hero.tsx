@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-72px)] overflow-hidden bg-[#010104] pt-20 pb-8 sm:pt-36 sm:pb-10 lg:pt-16 lg:pb-4">
+    <section className="relative min-h-[calc(100vh-72px)] overflow-hidden bg-[#010104] pt-20 pb-8 sm:pt-36 sm:pb-10 lg:pt-20 lg:pb-4">
       {/* BACKGROUND */}
       <div className="absolute inset-0 overflow-hidden">
         {/* DARKER PREMIUM GRADIENT */}
@@ -29,22 +29,12 @@ export default function Hero() {
         <div className="grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-2">
           {/* LEFT SIDE */}
           <div className="max-w-2xl text-center lg:text-left">
-            {/* BADGE */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mb-7 inline-flex items-center gap-2 rounded-full border border-pink-500/15 bg-white/5 px-4 py-2 text-xs sm:text-sm text-pink-300 backdrop-blur-md"
-            >
-              🔥 India’s Fastest Growing Poker Platform
-            </motion.div>
-
             {/* HEADING */}
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="text-4xl font-black leading-[0.95] sm:text-5xl md:text-6xl lg:text-7xl"
+              className="text-4xl font-black leading-[1.12] sm:text-5xl md:text-6xl lg:text-7xl"
             >
               <span className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.10)]">
                 World’s Most

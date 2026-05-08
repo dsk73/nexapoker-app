@@ -65,7 +65,7 @@ export default function HowItWorks() {
               className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
             >
               {/* IMAGE */}
-              <div className="relative w-full aspect-[4/3] overflow-hidden">
+              <div className="relative w-full aspect-4/3 overflow-hidden">
                 <Image
                   src={step.image}
                   alt={step.title}

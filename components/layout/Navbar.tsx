@@ -14,16 +14,16 @@ export default function Navbar() {
         <Link href="/">
           <Image
             src="/logo/wptgp-logo-horizontal.png"
-            alt="NexaPoker Logo"
-            width={160}
-            height={40}
+            alt="logo"
+            width={180}
+            height={60}
+            className="w-[180px] h-auto"
             priority
-            className="h-10 w-auto"
           />
         </Link>
 
         {/* DESKTOP MENU */}
-        <nav className="hidden md:flex items-center gap-7 text-sm text-white">
+        <nav className="hidden md:flex items-center gap-7 text-lg text-white">
           <Link href="/" className="hover:text-gray-300 transition">
             Home
           </Link>
@@ -46,7 +46,7 @@ export default function Navbar() {
           {/* DOWNLOAD BUTTON */}
           <Link
             href="/download"
-            className="px-5 py-2 rounded-lg text-sm font-medium bg-pink-600 text-white hover:bg-pink-700 transition"
+            className="px-5 py-2 rounded-lg text-lg font-medium bg-pink-600 text-white hover:bg-pink-700 transition"
           >
             Download
           </Link>
@@ -56,7 +56,7 @@ export default function Navbar() {
             href="https://t.me/nexapoker"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-pink-600 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-pink-700 transition shadow-sm"
+            className="bg-pink-600 text-white px-5 py-2 rounded-lg text-lg font-medium hover:bg-pink-700 transition shadow-sm"
           >
             Play Now
           </a>

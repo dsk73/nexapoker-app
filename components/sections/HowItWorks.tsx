@@ -6,23 +6,33 @@ import Image from "next/image";
 const steps = [
   {
     title: "Join Telegram",
-    desc: "Click on 'Join Telegram' and enter our official channel.",
+    desc: "Click on 'Join Telegram' and enter our official Telegram channel to begin.",
     image: "/images/step1.png",
   },
   {
     title: "Contact Our Team",
-    desc: "Message our support team and get instant assistance to set up your account.",
+    desc: "Message our support team and get instant assistance for account setup.",
     image: "/images/step2.png",
   },
   {
     title: "Deposit Funds",
-    desc: "Make a secure deposit through our Telegram system and get your balance instantly.",
+    desc: "Make a secure deposit through our Telegram system and receive balance instantly.",
     image: "/images/step3.png",
   },
   {
-    title: "Start Playing",
-    desc: "Join tables & tournaments and start winning real money.",
+    title: "Get Rakebacks",
+    desc: "Unlock exciting rakeback rewards and weekly cashback benefits automatically.",
     image: "/images/step4.png",
+  },
+  {
+    title: "Get Bot Assistance",
+    desc: "Use our automated Telegram bot for quick support, deposits, and account help.",
+    image: "/images/step5.png",
+  },
+  {
+    title: "Start Playing",
+    desc: "Join tables & tournaments and start winning real money games instantly.",
+    image: "/images/step6.png",
   },
 ];
 
@@ -36,14 +46,14 @@ export default function HowItWorks() {
             How It <span className="text-pink-600">Works</span>
           </h2>
 
-          <p className="text-gray-600 max-w-xl mx-auto text-sm md:text-base">
+          <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
             Get started in just a few simple steps and begin your poker journey
-            instantly.
+            instantly with secure deposits, rakebacks, and 24/7 assistance.
           </p>
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
           {steps.map((step, i) => (
             <motion.div
               key={i}
@@ -55,20 +65,22 @@ export default function HowItWorks() {
               className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
             >
               {/* IMAGE */}
-              <div className="relative w-full aspect-4/3 overflow-hidden">
+              <div className="relative w-full aspect-[4/3] overflow-hidden">
                 <Image
                   src={step.image}
                   alt={step.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  loading={i < 3 ? "eager" : "lazy"}
+                  priority={i < 3}
                 />
               </div>
 
               {/* CONTENT */}
-              <div className="p-4 md:p-5">
+              <div className="p-5">
                 {/* STEP */}
-                <div className="text-pink-600 font-semibold text-xs mb-1 uppercase tracking-wide">
+                <div className="text-pink-600 font-semibold text-xs mb-2 uppercase tracking-[0.2em]">
                   Step {i + 1}
                 </div>
 
@@ -78,7 +90,7 @@ export default function HowItWorks() {
                 </h3>
 
                 {/* DESC */}
-                <p className="text-gray-600 text-sm leading-normal">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {step.desc}
                 </p>
               </div>
@@ -91,7 +103,8 @@ export default function HowItWorks() {
           <a
             href="https://t.me/nexapoker"
             target="_blank"
-            className="inline-block px-8 py-3 bg-pink-600 text-white rounded-xl font-medium hover:bg-pink-700 transition shadow-lg shadow-pink-500/20"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-pink-600 text-white rounded-xl font-medium hover:bg-pink-700 transition-all duration-300 shadow-lg shadow-pink-500/20"
           >
             Join Telegram Now
           </a>

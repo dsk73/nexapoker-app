@@ -46,7 +46,7 @@ export default function Navbar() {
           {/* DOWNLOAD BUTTON */}
           <Link
             href="/download"
-            className="px-5 py-2 rounded-lg text-lg font-medium bg-pink-600 text-white hover:bg-pink-700 transition"
+            className="px-5 py-2 rounded-lg text-lg font-medium bg-pink-600 text-white! hover:bg-pink-700 transition"
           >
             Download
           </Link>
@@ -56,7 +56,7 @@ export default function Navbar() {
             href="https://t.me/nexapoker"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-pink-600 text-white px-5 py-2 rounded-lg text-lg font-medium hover:bg-pink-700 transition shadow-sm"
+            className="bg-pink-600 text-white! px-5 py-2 rounded-lg text-lg font-medium hover:bg-pink-700 transition shadow-sm"
           >
             Play Now
           </a>
@@ -99,7 +99,7 @@ export default function Navbar() {
           {/* DOWNLOAD */}
           <Link
             href="/download"
-            className="block text-center bg-pink-600 text-white py-3 rounded-lg font-medium"
+            className="block text-center bg-pink-600 text-white! py-3 rounded-lg font-medium"
           >
             Download
           </Link>
@@ -109,7 +109,7 @@ export default function Navbar() {
             href="https://t.me/nexapoker"
             target="_blank"
             rel="noopener noreferrer"
-            className="block text-center bg-pink-600 text-white py-3 rounded-lg font-medium"
+            className="block text-center bg-pink-600 text-white! py-3 rounded-lg font-medium"
           >
             Play Now
           </a>

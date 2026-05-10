@@ -1,9 +1,11 @@
+//nexapoker-app/app/download/page.tsx
 "use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import Link from "next/link";
 import { Laptop, Smartphone, Apple, Download, Copy, Check } from "lucide-react";
 
 const downloads = [
@@ -47,7 +49,7 @@ export default function DownloadPage() {
     <main className="bg-white text-gray-900 min-h-screen">
       <Navbar />
 
-      <section className="pt-28 pb-20 px-6">
+      <section className="pt-36 pb-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           {/* TITLE */}
           <motion.h1
@@ -143,6 +145,60 @@ export default function DownloadPage() {
             <p className="text-gray-500 text-sm mt-2">
               Weekly rakeback + exciting contests available
             </p>
+          </div>
+
+          {/* INTERNAL LINKS */}
+          <div className="mt-20 grid md:grid-cols-2 gap-5 text-left">
+            <Link
+              href="/nexa-poker-download"
+              className="rounded-2xl border border-gray-200 p-5 hover:border-pink-500 hover:shadow-lg transition"
+            >
+              <h3 className="text-xl font-semibold mb-2">
+                Nexa Poker Download
+              </h3>
+
+              <p className="text-gray-600 text-sm">
+                Complete guide for downloading Nexa Poker on all supported
+                devices.
+              </p>
+            </Link>
+
+            <Link
+              href="/online-poker"
+              className="rounded-2xl border border-gray-200 p-5 hover:border-pink-500 hover:shadow-lg transition"
+            >
+              <h3 className="text-xl font-semibold mb-2">Online Poker</h3>
+
+              <p className="text-gray-600 text-sm">
+                Explore tournaments, cash games, and premium online poker
+                gameplay.
+              </p>
+            </Link>
+
+            <Link
+              href="/poker-download"
+              className="rounded-2xl border border-gray-200 p-5 hover:border-pink-500 hover:shadow-lg transition"
+            >
+              <h3 className="text-xl font-semibold mb-2">Poker Download</h3>
+
+              <p className="text-gray-600 text-sm">
+                Learn more about poker software downloads for Android, iOS,
+                Windows, and Mac.
+              </p>
+            </Link>
+
+            <Link
+              href="/wpt-global-alternative"
+              className="rounded-2xl border border-gray-200 p-5 hover:border-pink-500 hover:shadow-lg transition"
+            >
+              <h3 className="text-xl font-semibold mb-2">
+                WPT Global Alternative
+              </h3>
+
+              <p className="text-gray-600 text-sm">
+                Discover premium alternatives for modern online poker gameplay.
+              </p>
+            </Link>
           </div>
         </div>
       </section>

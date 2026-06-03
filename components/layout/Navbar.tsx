@@ -15,11 +15,10 @@ export default function Navbar() {
         <Link href="/">
           <Image
             src="/logo/wptgp-logo-horizontal.png"
-            alt="Nexa Poker"
-            width={180}
-            height={60}
-            className="w-45 h-auto"
-            priority
+            width={300}
+            height={80}
+            className="w-40 h-auto"
+            alt={"Footer logo"}
           />
         </Link>
 
@@ -47,8 +46,9 @@ export default function Navbar() {
           <Link
             href="/download"
             className="px-5 py-2 rounded-lg text-lg font-medium bg-pink-600 hover:bg-pink-700 transition"
+            style={{ color: "#ffffff" }}
           >
-            <span className="text-white">Download</span>
+            Download
           </Link>
 
           <a
@@ -56,8 +56,9 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="bg-pink-600 px-5 py-2 rounded-lg text-lg font-medium hover:bg-pink-700 transition shadow-sm"
+            style={{ color: "#ffffff" }}
           >
-            <span className="text-white">Play Now</span>
+            Play Now
           </a>
         </div>
 
@@ -98,18 +99,20 @@ export default function Navbar() {
 
           <Link
             href="/download"
-            className="block text-center bg-pink-600 py-3 rounded-lg font-medium"
+            className="block text-center bg-pink-600 py-3 rounded-lg font-medium hover:bg-pink-700 transition"
+            style={{ color: "#ffffff" }}
           >
-            <span className="text-white">Download</span>
+            Download
           </Link>
 
           <a
             href="https://t.me/nexapoker"
             target="_blank"
             rel="noopener noreferrer"
-            className="block text-center bg-pink-600 py-3 rounded-lg font-medium"
+            className="block text-center bg-pink-600 py-3 rounded-lg font-medium hover:bg-pink-700 transition"
+            style={{ color: "#ffffff" }}
           >
-            <span className="text-white">Play Now</span>
+            Play Now
           </a>
         </div>
       )}

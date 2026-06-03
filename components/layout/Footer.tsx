@@ -23,12 +23,10 @@ export default function Footer() {
               <Link href="/">
                 <Image
                   src="/logo/wptgp-logo-horizontal.png"
-                  alt="NexaPoker"
-                  width={140}
-                  height={40}
-                  className="object-contain"
-                  style={{ width: "140px", height: "auto" }}
-                />
+                  width={300}
+                  height={80}
+                  className="w-40 h-auto"
+                  alt={"Logo"}                />
               </Link>
             </div>
 
@@ -82,10 +80,7 @@ export default function Footer() {
 
             <ul className="space-y-2 text-white/70">
               <li>
-                <Link
-                  href="/nexa40"
-                  className="hover:text-pink-400 transition"
-                >
+                <Link href="/nexa40" className="hover:text-pink-400 transition">
                   Nexa40
                 </Link>
               </li>

@@ -43,21 +43,6 @@ body {
    TYPOGRAPHY
 ========================================= */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-small,
-strong,
-label,
-li,
-a {
-  color: inherit;
-}
 
 /* =========================================
    SELECTION
@@ -102,7 +87,6 @@ img {
 ========================================= */
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 

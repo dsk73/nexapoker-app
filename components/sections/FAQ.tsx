@@ -1,90 +1,147 @@
-//nexapoker-app/components/sections/FAQ.tsx
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    question: "How do I start playing?",
+    question: "How do I start playing on Nexa Poker?",
     answer:
-      "Click on 'Join Telegram', connect with our team, and you will get complete guidance to start playing instantly.",
+      "Click on Join Telegram, connect with our team, complete a quick setup, make your first deposit, and start playing cash games and tournaments instantly.",
   },
   {
     question: "How do deposits work?",
     answer:
-      "Deposits are handled securely through our Telegram system. You will get payment details from our team and your balance will be updated instantly.",
+      "Deposits are handled securely through our Telegram support team. Your balance is credited quickly once the payment is confirmed.",
   },
   {
-    question: "How do withdrawals work?",
+    question: "How fast are withdrawals?",
     answer:
-      "Withdrawals are processed quickly via our Telegram support. Most payouts are completed within minutes.",
+      "Most withdrawals are processed within minutes. Our support team ensures fast and smooth payouts for all eligible players.",
   },
   {
-    question: "Is this platform safe?",
+    question: "Can I play on mobile devices?",
     answer:
-      "Yes, we operate with a trusted player base and secure systems to ensure fair gameplay and safe transactions.",
+      "Yes. Nexa Poker supports Android and iPhone devices, allowing you to enjoy poker anytime and anywhere.",
   },
   {
-    question: "Do I need experience to play?",
+    question: "Do you offer poker tournaments?",
     answer:
-      "No, beginners are welcome. Our team will guide you and you can start easily even if you are new to poker.",
+      "Yes. Players can participate in regular tournaments, cash games, leaderboard promotions, and special events throughout the week.",
   },
   {
-    question: "What bonuses do I get?",
+    question: "What bonuses are available?",
     answer:
-      "You get a 1st deposit bonus, weekly rakeback, and exclusive rewards using our bonus code.",
+      "Players can enjoy first deposit bonuses, weekly rakeback rewards, special promotions, and exclusive Telegram offers.",
+  },
+  {
+    question: "Is Nexa Poker safe?",
+    answer:
+      "Yes. Nexa Poker provides secure gameplay, trusted payment processing, and dedicated player support for a reliable experience.",
+  },
+  {
+    question: "Can beginners play?",
+    answer:
+      "Absolutely. Whether you are new to poker or an experienced grinder, our team can help you get started quickly.",
   },
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 px-6 bg-white text-gray-900">
-      <div className="max-w-3xl mx-auto">
-        {/* HEADING */}
-        <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 text-center mb-6">
-          Frequently Asked <span className="text-pink-600">Questions</span>
-        </h2>
+    <section
+      id="faq"
+      className="relative overflow-hidden bg-white px-6 pt-24 pb-10"
+    >
+      {/* Background Glow */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-pink-500/5 blur-[120px]" />
+        <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-pink-500/5 blur-[120px]" />
+      </div>
 
-        <p className="text-gray-600 text-center mb-12">
-          Everything you need to know before getting started.
-        </p>
-
-        {/* FAQ LIST */}
-        <div className="space-y-4">
-          {faqs.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.08 }}
-              viewport={{ once: true }}
-              className="border border-gray-200 rounded-xl bg-white overflow-hidden"
+      <div className="relative z-10 mx-auto max-w-4xl">
+        {/* Heading */}
+        <div className="mb-16 text-center">
+          <h2 className="mb-5 text-4xl font-black text-slate-900 md:text-6xl">
+            Everything About{" "}
+            <span
+              style={{
+                color: "#cd114e",
+              }}
             >
-              {/* QUESTION */}
-              <button
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex justify-between items-center px-6 py-4 text-left"
+              Nexa Poker
+            </span>
+          </h2>
+
+          <p className="mx-auto max-w-2xl text-slate-500 text-lg">
+            Everything you need to know before you start playing.
+          </p>
+        </div>
+
+        {/* FAQ List */}
+        <div className="space-y-5">
+          {faqs.map((item, index) => {
+            const isOpen = openIndex === index;
+
+            return (
+              <motion.div
+                key={index}
+                layout
+                className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-[#cd114e]/20 hover:shadow-xl"
               >
-                <span className="text-sm font-medium text-gray-900">
-                  {item.question}
-                </span>
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="flex w-full items-center justify-between px-7 py-6 text-left"
+                >
+                  <span className="pr-6 text-lg font-semibold text-slate-900">
+                    {item.question}
+                  </span>
 
-                <span className="text-pink-600 text-lg">
-                  {openIndex === i ? "−" : "+"}
-                </span>
-              </button>
+                  <div
+                    className={`flex h-10 w-10 items-center justify-center rounded-full transition-all ${
+                      isOpen ? "text-white" : "bg-slate-100 text-slate-600"
+                    }`}
+                    style={
+                      isOpen
+                        ? {
+                            backgroundColor: "#cd114e",
+                          }
+                        : {}
+                    }
+                  >
+                    {isOpen ? "−" : "+"}
+                  </div>
+                </button>
 
-              {/* ANSWER */}
-              {openIndex === i && (
-                <div className="px-6 pb-4 text-sm text-gray-600 leading-relaxed">
-                  {item.answer}
-                </div>
-              )}
-            </motion.div>
-          ))}
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{
+                        height: 0,
+                        opacity: 0,
+                      }}
+                      animate={{
+                        height: "auto",
+                        opacity: 1,
+                      }}
+                      exit={{
+                        height: 0,
+                        opacity: 0,
+                      }}
+                      transition={{
+                        duration: 0.25,
+                      }}
+                    >
+                      <div className="max-w-3xl border-t border-slate-100 px-7 py-6 leading-8 text-slate-600">
+                        {item.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

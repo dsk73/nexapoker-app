@@ -1,55 +1,93 @@
-//nexapoker-app/components/sections/CTA.tsx
 "use client";
 
 import { motion } from "framer-motion";
 
 export default function CTA() {
   return (
-    <section className="relative py-16 px-6 overflow-hidden bg-[#0a0018] text-white">
-      {/* BACKGROUND GLOW */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute w-100 h-100 bg-pink-600/20 blur-[120px] -top-25 left-1/2 -translate-x-1/2" />
-        <div className="absolute w-75 h-75 bg-purple-600/20 blur-[120px] -bottom-25 -right-25" />
-      </div>
+    <section className="relative overflow-hidden bg-[#070012] px-6 py-12">
 
-      <div className="max-w-3xl mx-auto text-center">
-        {/* HEADLINE */}
+      {/* Grid */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-4xl text-center">
+        {/* Heading */}
         <motion.h2
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-white"
+          initial={{
+            opacity: 0,
+            y: 25,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="mb-6 text-4xl font-black leading-tight text-white md:text-6xl"
         >
-          <span className="text-white">Ready to Start </span>
-          <span className="bg-linear-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+          Ready to Start{" "}
+          <span
+            style={{
+              color: "#ee1d60",
+            }}
+          >
             Winning?
           </span>
         </motion.h2>
 
-        {/* SUBTEXT */}
+        {/* Description */}
         <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-white/80 mt-4 text-sm md:text-base"
+          initial={{
+            opacity: 0,
+            y: 15,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            delay: 0.15,
+          }}
+          className="mx-auto max-w-2xl text-lg leading-8 text-slate-300"
         >
-          Join now and experience fast games, real players, instant withdrawals,
-          weekly rakeback rewards, and premium poker action.
+          Join today and enjoy fast games, instant withdrawals, weekly rakeback
+          rewards.
         </motion.p>
 
-        {/* CTA BUTTON */}
+        {/* Button */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          viewport={{ once: true }}
-          className="mt-8"
+          initial={{
+            opacity: 0,
+            y: 15,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            delay: 0.25,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="mt-10"
         >
           <a
             href="https://t.me/nexapoker"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-pink-600 text-white px-8 py-3 rounded-xl font-medium hover:bg-pink-700 transition-all duration-300 shadow-lg shadow-pink-500/20"
+            className="inline-flex items-center justify-center rounded-2xl px-8 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-1"
+            style={{
+              backgroundColor: "#cd114e",
+              boxShadow: "0 15px 40px rgba(205,17,78,.25)",
+            }}
           >
             Join Telegram Now
           </a>

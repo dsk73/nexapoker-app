@@ -1,4 +1,3 @@
-//nexapoker-app/components/sections/Payments.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -6,55 +5,87 @@ import { motion } from "framer-motion";
 const steps = [
   {
     title: "Easy Deposits",
-    desc: "Join our Telegram channel and get secure payment details instantly. Your balance is updated within seconds after confirmation.",
+    desc: "Get payment details instantly through Telegram.",
   },
   {
     title: "Fast Withdrawals",
-    desc: "Request withdrawals anytime via Telegram. Most payouts are processed within minutes without delays.",
+    desc: "Most payout requests are processed within minutes.",
   },
   {
     title: "Secure System",
-    desc: "All transactions are handled safely through our trusted system ensuring complete transparency and reliability.",
+    desc: "Safe, transparent, and reliable transaction handling.",
   },
 ];
 
 export default function Payments() {
   return (
-    <section className="py-24 px-6 bg-white text-gray-900">
-      <div className="max-w-7xl mx-auto text-center">
-        {/* HEADING */}
-        <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-6">
-          Deposits & <span className="text-pink-600">Withdrawals</span>
-        </h2>
+    <section
+      id="payments"
+      className="relative overflow-hidden bg-slate-50 px-6 py-12"
+    >
+      {/* Background Glow */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 left-0 h-125 w-125 rounded-full bg-pink-500/5 blur-[140px]" />
+        <div className="absolute bottom-0 right-0 h-125 w-125 rounded-full bg-pink-500/5 blur-[140px]" />
+      </div>
 
-        <p className="text-gray-600 max-w-2xl mx-auto mb-16">
-          Fast, secure, and hassle-free transactions handled directly through
-          our Telegram system.
-        </p>
-
-        {/* STEPS */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {steps.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -6 }}
-              className="bg-gray-50 border border-gray-200 rounded-2xl p-8 text-left shadow-sm hover:shadow-md transition"
+      <div className="relative z-10 mx-auto max-w-7xl">
+        {/* Heading */}
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-4xl font-black text-slate-900 md:text-6xl">
+            Deposits &{" "}
+            <span
+              style={{
+                color: "#cd114e",
+              }}
             >
-              <div className="text-pink-600 font-semibold mb-2">
-                Step {i + 1}
+              Withdrawals
+            </span>
+          </h2>
+
+          <p className="text-slate-500 text-lg">
+            Fast, secure, and hassle-free transactions.
+          </p>
+        </div>
+
+        {/* Steps */}
+        <div className="grid gap-8 md:grid-cols-3">
+          {steps.map((item, index) => (
+            <motion.div
+              key={item.title}
+              initial={{
+                opacity: 0,
+                y: 30,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: index * 0.1,
+              }}
+              whileHover={{
+                y: -8,
+              }}
+              className="group relative overflow-hidden rounded-4xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:border-[#cd114e]/20 hover:shadow-2xl"
+            >
+              {/* Hover Glow */}
+              <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#cd114e]/10 blur-3xl" />
               </div>
 
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                {item.title}
-              </h3>
+              <div className="relative">
+                {/* Title */}
+                <h3 className="mb-3 text-2xl font-bold text-slate-900">
+                  {item.title}
+                </h3>
 
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {item.desc}
-              </p>
+                {/* Description */}
+                <p className="leading-7 text-slate-600">{item.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>

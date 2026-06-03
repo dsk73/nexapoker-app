@@ -1,4 +1,3 @@
-//nexapoker-app/components/sections/Stats.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -12,37 +11,55 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="relative py-16 px-6 overflow-hidden bg-[#0a0018] text-white">
-      {/* BACKGROUND GLOW */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute w-125 h-125 bg-pink-600/30 blur-[140px] -top-30 -left-30" />
-        <div className="absolute w-100 h-100 bg-purple-600/30 blur-[140px] -bottom-30 -right-30" />
-      </div>
+    <section className="relative overflow-hidden bg-[#070012] px-6 py-12">
+      {/* Grid */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-      <div className="max-w-6xl mx-auto">
-        {/* GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
-          {stats.map((item, i) => (
+      <div className="relative z-10 mx-auto max-w-6xl">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+          {stats.map((item, index) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-              className="space-y-3"
+              key={item.label}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: index * 0.08,
+              }}
+              whileHover={{
+                y: -6,
+              }}
+              className="rounded-[28px] border border-white/10 bg-white/3 p-8 text-center backdrop-blur-xl transition-all duration-300 hover:border-[#ee1d60]/30"
             >
-              {/* VALUE (HERO STYLE) */}
-              <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-white">
-                <span className="bg-linear-to-r from-pink-200 to-purple-200 bg-clip-text text-transparent ">
-                  {item.value}
-                </span>
-              </h3>
+              {/* Value */}
+              <div
+                className="mb-3 text-3xl font-black md:text-5xl"
+                style={{
+                  color: "#ff5e91",
+                }}
+              >
+                {item.value}
+              </div>
 
-              {/* LABEL */}
-              <p className="text-sm md:text-base font-medium text-white/80">
+              {/* Label */}
+              <div className="text-sm font-medium text-slate-300 md:text-base">
                 {item.label}
-              </p>
+              </div>
             </motion.div>
           ))}
         </div>

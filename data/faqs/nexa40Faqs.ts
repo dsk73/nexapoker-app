@@ -4,7 +4,7 @@ export const nexa40Faqs: FAQItem[] = [
 {
 question: "What is Nexa40?",
 answer:
-"Nexa40 is part of the Nexa Poker ecosystem and provides players access to tournaments, cash games, rewards, and premium poker experiences.",
+"Nexa40 is part of the promotional code for Nexa Poker ecosystem and provides players access to tournaments, cash games, rewards, and premium poker experiences.",
 },
 {
 question: "Can I play real money poker on Nexa40?",

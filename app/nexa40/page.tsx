@@ -79,7 +79,7 @@ export default function Nexa40Page() {
         title="What Is Nexa40?"
         subtitle="A modern online poker ecosystem."
         content={[
-          "Nexa40 is a premium online poker destination designed for players who want access to tournaments, cash games, player rewards, and smooth gameplay experiences.",
+          "Nexa40 is a promotional code of a premium online poker destination designed for players who want access to tournaments, cash games, player rewards, and smooth gameplay experiences.",
           "Whether you are a beginner learning the basics or an experienced player seeking daily action, Nexa40 provides a platform that supports multiple playing styles and preferences.",
           "Players can participate in competitive tournaments, enjoy real money cash games, earn weekly rakeback rewards, and access promotional events throughout the year.",
           "The platform focuses on accessibility, convenience, and creating a high-quality online poker environment for modern players.",

@@ -1,3 +1,4 @@
+//nexapoker-app/components/layout/Navbar.tsx
 "use client";
 
 import { useState } from "react";
@@ -14,7 +15,7 @@ export default function Navbar() {
         <Link href="/">
           <Image
             src="/logo/wptgp-logo-horizontal.png"
-            alt="logo"
+            alt="Nexa Poker"
             width={180}
             height={60}
             className="w-45 h-auto"
@@ -43,22 +44,20 @@ export default function Navbar() {
 
         {/* RIGHT BUTTONS */}
         <div className="hidden md:flex items-center gap-3">
-          {/* DOWNLOAD BUTTON */}
           <Link
             href="/download"
-            className="px-5 py-2 rounded-lg text-lg font-medium bg-pink-600 text-white! hover:bg-pink-700 transition"
+            className="px-5 py-2 rounded-lg text-lg font-medium bg-pink-600 hover:bg-pink-700 transition"
           >
-            Download
+            <span className="text-white">Download</span>
           </Link>
 
-          {/* PLAY NOW BUTTON (external → keep <a>) */}
           <a
             href="https://t.me/nexapoker"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-pink-600 text-white! px-5 py-2 rounded-lg text-lg font-medium hover:bg-pink-700 transition shadow-sm"
+            className="bg-pink-600 px-5 py-2 rounded-lg text-lg font-medium hover:bg-pink-700 transition shadow-sm"
           >
-            Play Now
+            <span className="text-white">Play Now</span>
           </a>
         </div>
 
@@ -66,6 +65,7 @@ export default function Navbar() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden text-white text-xl"
+          aria-label="Toggle menu"
         >
           ☰
         </button>
@@ -96,22 +96,20 @@ export default function Navbar() {
             FAQ
           </Link>
 
-          {/* DOWNLOAD */}
           <Link
             href="/download"
-            className="block text-center bg-pink-600 text-white! py-3 rounded-lg font-medium"
+            className="block text-center bg-pink-600 py-3 rounded-lg font-medium"
           >
-            Download
+            <span className="text-white">Download</span>
           </Link>
 
-          {/* PLAY NOW */}
           <a
             href="https://t.me/nexapoker"
             target="_blank"
             rel="noopener noreferrer"
-            className="block text-center bg-pink-600 text-white! py-3 rounded-lg font-medium"
+            className="block text-center bg-pink-600 py-3 rounded-lg font-medium"
           >
-            Play Now
+            <span className="text-white">Play Now</span>
           </a>
         </div>
       )}

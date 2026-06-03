@@ -1,22 +1,30 @@
 @import "tailwindcss";
 
-/* -------------------- */
-/* ROOT THEME VARIABLES */
-/* -------------------- */
+/* =========================================
+   ROOT THEME
+========================================= */
 
 :root {
   --bg: #ffffff;
   --bg-secondary: #f8fafc;
+
   --text-primary: #0f172a;
   --text-secondary: #64748b;
+
   --border: #e2e8f0;
-  --primary: #ff2d6f;
+
+  --primary: #ff0f7b;
+  --primary-hover: #e6006d;
+
   --accent: #14002e;
+
+  --success: #22c55e;
+  --warning: #f59e0b;
 }
 
-/* -------------------- */
-/* BASE RESET */
-/* -------------------- */
+/* =========================================
+   BASE
+========================================= */
 
 html {
   scroll-behavior: smooth;
@@ -27,81 +35,114 @@ body {
   color: var(--text-primary);
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
-/* -------------------- */
-/* TYPOGRAPHY */
-/* -------------------- */
+/* =========================================
+   TYPOGRAPHY
+========================================= */
 
 h1,
 h2,
 h3,
-h4 {
-  color: var(--text-primary);
+h4,
+h5,
+h6,
+p,
+span,
+small,
+strong,
+label,
+li,
+a {
+  color: inherit;
 }
 
-p {
-  color: var(--text-secondary);
-}
-
-/* -------------------- */
-/* SELECTION */
-/* -------------------- */
+/* =========================================
+   SELECTION
+========================================= */
 
 ::selection {
   background: var(--primary);
   color: white;
 }
 
-/* -------------------- */
-/* SCROLLBAR (SUBTLE) */
-/* -------------------- */
+/* =========================================
+   SCROLLBAR
+========================================= */
 
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
+  background: #f8fafc;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5f5;
-  border-radius: 10px;
+  background: #cbd5e1;
+  border-radius: 999px;
 }
 
-/* -------------------- */
-/* IMAGE FIX */
-/* -------------------- */
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =========================================
+   IMAGE FIXES
+========================================= */
 
 img {
   user-select: none;
-  pointer-events: none;
 }
 
-/* -------------------- */
-/* LINK RESET */
-/* -------------------- */
+/* =========================================
+   LINKS
+========================================= */
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
-/* -------------------- */
-/* CARD BASE STYLE */
-/* -------------------- */
+/* =========================================
+   BOX MODEL
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================
+   FORM RESET
+========================================= */
+
+button,
+a,
+input,
+textarea,
+select {
+  outline: none;
+}
+
+/* =========================================
+   CARD UTILITIES
+========================================= */
 
 .card {
   background: white;
   border: 1px solid var(--border);
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* -------------------- */
-/* BUTTON BASE */
-/* -------------------- */
+/* =========================================
+   BUTTON UTILITIES
+========================================= */
 
 .btn-primary {
   background: var(--primary);
@@ -109,8 +150,61 @@ a {
   border-radius: 12px;
   padding: 12px 24px;
   font-weight: 600;
+  transition: all 0.25s ease;
 }
 
 .btn-primary:hover {
-  background: #16a34a;
+  background: var(--primary-hover);
+}
+
+/* =========================================
+   PREMIUM UTILITIES
+========================================= */
+
+.text-gradient {
+  background: linear-gradient(90deg, #ff0f7b 0%, #ff4fb0 50%, #d946ef 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-dark-premium {
+  background: linear-gradient(
+    135deg,
+    #05000d 0%,
+    #090015 35%,
+    #120024 70%,
+    #1a0033 100%
+  );
+}
+
+.glow-pink {
+  box-shadow: 0 0 40px rgba(255, 15, 123, 0.4);
+}
+
+.glow-purple {
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.4);
+}
+
+/* =========================================
+   FIX FOR NEXT IMAGE
+========================================= */
+
+img[data-nimg] {
+  display: block;
+}
+
+/* =========================================
+   REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

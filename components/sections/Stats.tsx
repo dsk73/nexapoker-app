@@ -1,3 +1,4 @@
+//nexapoker-app/components/sections/Stats.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -11,7 +12,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="relative py-16 px-6 overflow-hidden bg-[#0a0018]">
+    <section className="relative py-16 px-6 overflow-hidden bg-[#0a0018] text-white">
       {/* BACKGROUND GLOW */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute w-125 h-125 bg-pink-600/30 blur-[140px] -top-30 -left-30" />
@@ -32,14 +33,16 @@ export default function Stats() {
               className="space-y-3"
             >
               {/* VALUE (HERO STYLE) */}
-              <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight">
+              <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-white">
                 <span className="bg-linear-to-r from-pink-200 to-purple-200 bg-clip-text text-transparent ">
                   {item.value}
                 </span>
               </h3>
 
               {/* LABEL */}
-              <p className="text-sm md:text-base text-white/80">{item.label}</p>
+              <p className="text-sm md:text-base font-medium text-white/80">
+                {item.label}
+              </p>
             </motion.div>
           ))}
         </div>

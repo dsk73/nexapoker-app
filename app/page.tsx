@@ -18,7 +18,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="relative text-white overflow-hidden">
+    <main className="relative overflow-hidden">
       {/* NAVBAR */}
       <Navbar />
 

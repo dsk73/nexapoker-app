@@ -1,3 +1,4 @@
+//nexapoker-app/components/sections/Hero.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -5,7 +6,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-72px)] overflow-hidden bg-[#010104] pt-20 pb-8 sm:pt-36 sm:pb-10 lg:pt-20 lg:pb-4">
+    <section className="relative min-h-[calc(100vh-72px)] overflow-hidden bg-[#010104] text-white pt-20 pb-8 sm:pt-36 sm:pb-10 lg:pt-20 lg:pb-4">
       {/* BACKGROUND */}
       <div className="absolute inset-0 overflow-hidden">
         {/* DARKER PREMIUM GRADIENT */}
@@ -34,7 +35,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="text-4xl font-black leading-[1.12] sm:text-5xl md:text-6xl lg:text-7xl"
+              className="text-4xl font-black leading-[1.12] text-white sm:text-5xl md:text-6xl lg:text-7xl"
             >
               <span className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.10)]">
                 World’s Most
@@ -97,7 +98,9 @@ export default function Hero() {
                 <div className="flex w-full max-w-90 items-center justify-center rounded-2xl border border-pink-500/20 bg-pink-500/10 px-5 py-3.5 backdrop-blur-md shadow-[0_0_35px_rgba(236,72,153,0.08)]">
                   <span className="mr-3 text-lg">🎁</span>
 
-                  <span className="text-sm text-white/75">Use Bonus Code</span>
+                  <span className="text-sm font-medium text-white/75">
+                    Use Bonus Code
+                  </span>
 
                   <span className="mx-3 h-5 w-px bg-white/10" />
 
@@ -113,7 +116,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.45 }}
-              className="mt-7 flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm text-white/45 lg:justify-start"
+              className="mt-7 flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm text-white/60 lg:justify-start"
             >
               <span>✔ Instant Withdrawals</span>
               <span>✔ 24/7 Support</span>

@@ -1,154 +1,136 @@
-//nexapoker-app/app/blog/[slug]/page.tsx
+import type { Metadata } from "next";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CalendarDays, ArrowLeft } from "lucide-react";
 
-const blogPosts = {
-  "best-online-poker-apps-2026": {
-    title: "Best Online Poker Apps in 2026",
-    date: "May 2026",
-    content: `
-Online poker continues to grow rapidly worldwide as players search for smooth gameplay, fast withdrawals, exciting tournaments, and reliable poker platforms. Modern poker applications now provide professional poker experiences directly on mobile devices and desktop systems.
+import { CalendarDays, ArrowLeft, ArrowRight, BookOpen } from "lucide-react";
 
-Players searching for the best online poker apps in 2026 usually look for stable gameplay, rewarding promotions, secure transactions, and multi-device support. Nexa40 is becoming one of the fast-growing online poker platforms designed to deliver premium poker gameplay across Android, iOS, Windows, and Mac devices.
+import { blogPosts } from "@/data/blogs";
 
-One of the biggest advantages of modern poker applications is convenience. Players can instantly join tournaments, cash games, and leaderboard events without visiting physical poker rooms. Mobile poker apps allow users to enjoy online poker anytime and anywhere.
-
-Nexa40 focuses on providing a smooth poker experience with optimized performance, quick navigation, and stable gameplay infrastructure. The platform supports both recreational poker players and experienced grinders looking for consistent poker action.
-
-Fast withdrawals are extremely important for online poker players. Nexa40 prioritizes secure balance management and efficient withdrawal systems to provide a reliable poker environment for players worldwide.
-
-Weekly rakeback systems and promotions also help players maximize long-term value while continuing to enjoy tournaments and cash games regularly.
-
-Poker players in 2026 expect:
-- smooth software
-- secure transactions
-- fast withdrawals
-- mobile compatibility
-- tournament variety
-- rewarding promotions
-
-Nexa40 is designed around these expectations while continuing to improve gameplay quality and user experience.
-
-Whether you are looking for tournament poker, recreational cash games, or competitive poker action, modern poker platforms provide more opportunities than ever before for online players worldwide.
-    `,
-  },
-
-  "how-to-download-nexa-poker": {
-    title: "How to Download Nexa Poker",
-    date: "May 2026",
-    content: `
-Downloading Nexa Poker is simple and fast across Android, iOS, Windows, and Mac devices. Players can quickly install the application and begin playing online poker within minutes.
-
-Modern poker players expect smooth onboarding experiences and easy installation processes. Nexa Poker focuses on providing secure downloads and responsive poker software for all major platforms.
-
-Android users can download the APK version directly and install it securely on smartphones and tablets. iPhone users can access the iOS-compatible poker version while desktop players can install dedicated Windows and Mac software.
-
-The poker software is optimized for:
-- tournaments
-- cash games
-- fast gameplay
-- stable connections
-- smooth navigation
-
-After installation, players can create accounts, deposit funds securely, and begin participating in tournaments and poker cash games immediately.
-
-Weekly rakeback rewards, exciting promotions, and leaderboard contests are also available for active poker players using the platform regularly.
-
-Downloading poker software from trusted sources is extremely important for security and gameplay stability. Nexa Poker focuses on providing reliable poker software designed for modern online poker players.
-    `,
-  },
-
-  "nexa-poker-vs-wpt-global": {
-    title: "Nexa Poker vs WPT Global",
-    date: "May 2026",
-    content: `
-Online poker players often compare poker platforms to find the best gameplay experience, tournament schedules, and promotional systems. Nexa Poker and WPT Global are both recognized among players searching for premium online poker experiences.
-
-Players typically compare:
-- gameplay quality
-- tournament availability
-- poker software
-- withdrawal speed
-- promotions
-- multi-device support
-
-Nexa Poker focuses on smooth gameplay, fast withdrawals, weekly rakeback systems, and modern poker software designed for both recreational and experienced poker players.
-
-The platform supports Android, iOS, Windows, and Mac devices while offering tournaments and cash games throughout the day.
-
-Fast withdrawals and secure gameplay infrastructure are extremely important for online poker users. Nexa Poker prioritizes efficient transactions and stable poker gameplay to ensure smooth user experiences.
-
-Players looking for modern poker alternatives often search for platforms that provide rewarding gameplay systems alongside optimized poker software.
-
-Poker players today expect professional gameplay experiences, stable servers, responsive software, and exciting promotions — all areas that continue to shape the competitive online poker industry.
-    `,
-  },
+type Props = {
+  params: Promise<{
+    slug: string;
+  }>;
 };
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
 
-  const post = blogPosts[slug as keyof typeof blogPosts];
+  const post = blogPosts.find((blog) => blog.slug === slug);
+
+  if (!post) {
+    return {
+      title: "Article Not Found",
+    };
+  }
+
+  return {
+    title: `${post.title} | Nexa Poker Blog`,
+    description: post.description,
+
+    alternates: {
+      canonical: `https://nexa40.com/blog/${post.slug}`,
+    },
+
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      url: `https://nexa40.com/blog/${post.slug}`,
+      type: "article",
+      siteName: "Nexa Poker",
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+    },
+  };
+}
+
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+
+  const post = blogPosts.find((blog) => blog.slug === slug);
 
   if (!post) {
     notFound();
   }
 
-  return (
-    <main className="bg-white text-gray-900 min-h-screen">
-      <Navbar />
+  const paragraphs = post.content.trim().split("\n\n").filter(Boolean);
 
-      {/* HERO */}
-      <section className="pt-36 pb-16 px-6 bg-linear-to-b from-pink-50 to-white">
-        <div className="max-w-4xl mx-auto">
+  return (
+    <main className="min-h-screen bg-slate-50">
+      {" "}
+      <Navbar />
+      ```
+      {/* ARTICLE HEADER */}
+      <section className="px-6 pt-32 pb-12">
+        <div className="mx-auto max-w-5xl">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-pink-600 font-medium mb-8 hover:gap-3 transition-all"
+            className="mb-8 inline-flex items-center gap-2 font-medium text-pink-600 transition-all duration-300 hover:gap-3"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="h-4 w-4" />
             Back to Blog
           </Link>
 
-          <div className="flex items-center gap-2 text-sm text-gray-500 mb-5">
-            <CalendarDays className="w-4 h-4" />
-            {post.date}
+          <div className="relative overflow-hidden rounded-[40px] border border-slate-200 bg-white shadow-xl shadow-slate-100">
+            <div className="absolute -left-20 -top-20 h-80 w-80 rounded-full bg-pink-500/10 blur-3xl" />
+            <div className="absolute -right-20 -bottom-20 h-80 w-80 rounded-full bg-purple-500/10 blur-3xl" />
+
+            <div className="relative z-10 p-8 md:p-14">
+              <div className="mb-6 flex flex-wrap items-center gap-4">
+                <div className="inline-flex items-center gap-2 rounded-full border border-pink-200 bg-pink-50 px-4 py-2 text-sm font-semibold text-pink-600">
+                  <BookOpen className="h-4 w-4" />
+                  Poker Strategy Article
+                </div>
+
+                <div className="flex items-center gap-2 text-sm text-slate-500">
+                  <CalendarDays className="h-4 w-4" />
+                  {post.date}
+                </div>
+              </div>
+
+              <h1 className="mb-6 text-4xl font-black leading-tight text-slate-900 md:text-6xl">
+                {post.title}
+              </h1>
+
+              <p className="max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
+                {post.description}
+              </p>
+            </div>
           </div>
-
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-8">
-            {post.title}
-          </h1>
-
-          <p className="text-lg text-gray-600 leading-relaxed">
-            Explore insights, guides, and poker knowledge from Nexa40 covering
-            online poker, tournaments, poker software, withdrawals, promotions,
-            and poker gameplay strategies.
-          </p>
         </div>
       </section>
+      {/* ARTICLE CONTENT */}
+      <section className="px-6 pb-24">
+        <div className="mx-auto max-w-5xl">
+          <article className="rounded-[40px] border border-slate-200 bg-white p-10 shadow-xl shadow-slate-100 md:p-14">
+            <div className="max-w-none">
+              {paragraphs.map((paragraph, index) => {
+                const trimmed = paragraph.trim();
 
-      {/* ARTICLE */}
-      <section className="pb-24 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700">
-            {post.content
-              .trim()
-              .split("\n\n")
-              .map((paragraph, index) => {
-                if (paragraph.startsWith("- ")) {
-                  const items = paragraph
+                if (trimmed.startsWith("- ") || trimmed.includes("\n- ")) {
+                  const items = trimmed
                     .split("\n")
-                    .map((item) => item.replace("- ", ""));
+                    .filter((line) => line.trim().startsWith("- "))
+                    .map((line) => line.replace("- ", "").trim());
 
                   return (
-                    <ul key={index}>
+                    <ul
+                      key={index}
+                      className="my-8 list-disc space-y-4 pl-8 text-xl leading-9 text-slate-700"
+                    >
                       {items.map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
@@ -156,97 +138,148 @@ export default async function BlogPostPage({
                   );
                 }
 
-                return <p key={index}>{paragraph}</p>;
+                return (
+                  <p
+                    key={index}
+                    className="mb-8 text-xl leading-10 text-slate-700"
+                  >
+                    {paragraph}
+                  </p>
+                );
               })}
-          </div>
-
-          {/* INTERNAL LINKS */}
-          <div className="mt-16 grid md:grid-cols-2 gap-5">
-            <Link
-              href="/nexa-poker-download"
-              className="rounded-2xl border border-gray-200 p-5 hover:border-pink-500 hover:shadow-lg transition"
-            >
-              <h3 className="text-xl font-semibold mb-2">
-                Nexa Poker Download
-              </h3>
-
-              <p className="text-gray-600 text-sm">
-                Download Nexa40 for Android, iOS, Windows, and Mac devices.
-              </p>
-            </Link>
-
-            <Link
-              href="/online-poker"
-              className="rounded-2xl border border-gray-200 p-5 hover:border-pink-500 hover:shadow-lg transition"
-            >
-              <h3 className="text-xl font-semibold mb-2">Online Poker Guide</h3>
-
-              <p className="text-gray-600 text-sm">
-                Learn how modern online poker platforms work in 2026.
-              </p>
-            </Link>
-
-            <Link
-              href="/poker-download"
-              className="rounded-2xl border border-gray-200 p-5 hover:border-pink-500 hover:shadow-lg transition"
-            >
-              <h3 className="text-xl font-semibold mb-2">Poker Download</h3>
-
-              <p className="text-gray-600 text-sm">
-                Install premium poker software on all major devices.
-              </p>
-            </Link>
-
-            <Link
-              href="/wpt-global-alternative"
-              className="rounded-2xl border border-gray-200 p-5 hover:border-pink-500 hover:shadow-lg transition"
-            >
-              <h3 className="text-xl font-semibold mb-2">
-                WPT Global Alternative
-              </h3>
-
-              <p className="text-gray-600 text-sm">
-                Explore poker alternatives with tournaments and rakeback.
-              </p>
-            </Link>
-          </div>
-
-          {/* DARK CTA SECTION */}
-          <div className="relative mt-20 overflow-hidden rounded-3xl border border-white/10 bg-[#0a0018] p-10 md:p-14 text-center">
-            {/* BACKGROUND */}
-            <div className="absolute inset-0 -z-10">
-              <div className="absolute w-100 h-100 bg-pink-600/15 blur-[120px] -top-24 -left-24" />
-              <div className="absolute w-87.5 h-87.5 bg-purple-600/15 blur-[120px] -bottom-24 -right-24" />
             </div>
+          </article>
 
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white!">
-              Start Playing Online Poker
+          {/* CONTINUE READING */}
+          <section className="mt-20">
+            <h2 className="mb-10 text-center text-4xl font-black text-slate-900">
+              Continue Reading
             </h2>
 
-            <p className="max-w-2xl mx-auto text-white/70 text-lg leading-relaxed mb-10">
-              Download Nexa40 and experience premium online poker gameplay,
-              tournaments, fast withdrawals, and weekly rakeback rewards.
-            </p>
-
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link
-                href="/download"
-                className="inline-flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white! px-8 py-4 rounded-2xl font-semibold transition shadow-lg shadow-pink-500/20"
-              >
-                Download Nexa40
-              </Link>
-
+            <div className="grid gap-6 md:grid-cols-2">
               <Link
                 href="/online-poker"
-                className="inline-flex items-center justify-center border border-white/20 hover:border-pink-500 hover:bg-pink-500/10 text-white! px-8 py-4 rounded-2xl font-semibold transition"
+                className="rounded-[28px] border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-pink-300 hover:shadow-xl"
               >
-                Explore Online Poker
+                <h3 className="mb-3 text-2xl font-bold text-slate-900">
+                  Online Poker Guide
+                </h3>
+
+                <p className="leading-8 text-slate-600">
+                  Learn about tournaments, cash games, rewards, and online poker
+                  fundamentals.
+                </p>
+              </Link>
+
+              <Link
+                href="/download"
+                className="rounded-[28px] border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-pink-300 hover:shadow-xl"
+              >
+                <h3 className="mb-3 text-2xl font-bold text-slate-900">
+                  Download Poker App
+                </h3>
+
+                <p className="leading-8 text-slate-600">
+                  Download Nexa Poker for Android, iPhone, Windows, and Mac.
+                </p>
+              </Link>
+
+              <Link
+                href="/nexa40"
+                className="rounded-[28px] border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-pink-300 hover:shadow-xl"
+              >
+                <h3 className="mb-3 text-2xl font-bold text-slate-900">
+                  Nexa40
+                </h3>
+
+                <p className="leading-8 text-slate-600">
+                  Explore the Nexa40 poker platform and player ecosystem.
+                </p>
+              </Link>
+
+              <Link
+                href="/wpt-global-alternative"
+                className="rounded-[28px] border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-pink-300 hover:shadow-xl"
+              >
+                <h3 className="mb-3 text-2xl font-bold text-slate-900">
+                  WPT Global Alternative
+                </h3>
+
+                <p className="leading-8 text-slate-600">
+                  Compare Nexa Poker with popular online poker alternatives.
+                </p>
               </Link>
             </div>
-          </div>
+          </section>
+
+          {/* CTA */}
+          <section className="mt-24">
+            <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-[#070012]">
+              <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute left-0 top-0 h-125 w-125 rounded-full bg-pink-600/20 blur-[180px]" />
+                <div className="absolute bottom-0 right-0 h-125 w-125 rounded-full bg-purple-600/20 blur-[180px]" />
+              </div>
+
+              <div
+                className="absolute inset-0 opacity-[0.04]"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+                  backgroundSize: "80px 80px",
+                }}
+              />
+
+              <div className="relative z-10 px-8 py-20 text-center md:px-16 md:py-24">
+                <div className="mb-6 inline-flex items-center rounded-full border border-pink-500/20 bg-pink-500/10 px-4 py-2 text-sm font-semibold text-pink-300">
+                  ♠ Ready To Play?
+                </div>
+
+                <h2
+                  className="mb-6 text-4xl font-black md:text-6xl"
+                  style={{
+                    color: "#ffffff",
+                  }}
+                >
+                  Start Playing Online Poker Today
+                </h2>
+
+                <p
+                  className="mx-auto mb-10 max-w-3xl text-lg leading-8 md:text-xl"
+                  style={{
+                    color: "#d8d8e6",
+                  }}
+                >
+                  Download Nexa Poker and enjoy tournaments, cash games, weekly
+                  rakeback rewards, and a premium online poker experience.
+                </p>
+
+                <div className="flex flex-col justify-center gap-4 sm:flex-row">
+                  <Link
+                    href="/download"
+                    className="inline-flex items-center justify-center rounded-2xl bg-pink-600 px-8 py-4 font-semibold shadow-xl shadow-pink-500/30 transition-all duration-300 hover:-translate-y-1 hover:bg-pink-700"
+                    style={{
+                      color: "#ffffff",
+                    }}
+                  >
+                    Download App
+                  </Link>
+
+                  <Link
+                    href="/online-poker"
+                    className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/5 px-8 py-4 font-semibold backdrop-blur-xl transition-all duration-300 hover:border-pink-500/50 hover:bg-white/10"
+                    style={{
+                      color: "#ffffff",
+                    }}
+                  >
+                    Explore Online Poker
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </section>
-
       <Footer />
     </main>
   );

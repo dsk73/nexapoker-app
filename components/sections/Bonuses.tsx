@@ -1,3 +1,4 @@
+//nexapoker-app/components/sections/Bonuses.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -25,7 +26,7 @@ const bonuses = [
 
 export default function Bonuses() {
   return (
-    <section id="bonuses" className="py-24 px-6 bg-white">
+    <section id="bonuses" className="py-24 px-6 bg-white text-gray-900">
       <div className="max-w-7xl mx-auto text-center">
         {/* HEADING */}
         <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-6">

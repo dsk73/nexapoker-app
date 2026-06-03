@@ -1,3 +1,4 @@
+//nexapoker-app/components/sections/Downloads.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -7,7 +8,7 @@ export default function Downloads() {
   return (
     <section
       id="downloads"
-      className="relative py-16 px-6 overflow-hidden bg-[#0a0018]"
+      className="relative py-16 px-6 overflow-hidden bg-[#0a0018] text-white"
     >
       {/* BACKGROUND GLOW */}
       <div className="absolute inset-0 -z-10">
@@ -23,7 +24,7 @@ export default function Downloads() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 text-white"
           >
             <span className="text-white">Download & </span>
             <span className="bg-linear-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
@@ -66,7 +67,7 @@ export default function Downloads() {
           </motion.div>
 
           {/* NOTE */}
-          <p className="text-sm text-white/60 mt-3">
+          <p className="text-sm font-medium text-white/60 mt-3">
             *Download link will be provided after joining Telegram
           </p>
         </div>

@@ -1,3 +1,4 @@
+//nexapoker-app/components/sections/FAQ.tsx
 "use client";
 
 import { useState } from "react";
@@ -40,7 +41,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 px-6 bg-white">
+    <section id="faq" className="py-24 px-6 bg-white text-gray-900">
       <div className="max-w-3xl mx-auto">
         {/* HEADING */}
         <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 text-center mb-6">

@@ -32,7 +32,7 @@ export default function Footer() {
               </Link>
             </div>
 
-            <p className="text-white/70! leading-relaxed">
+            <p className="text-white/70 leading-relaxed">
               Nexa40 is a premium online poker platform offering smooth
               gameplay, tournaments, instant withdrawals, and weekly rakeback
               rewards for players worldwide.
@@ -41,11 +41,11 @@ export default function Footer() {
 
           {/* QUICK LINKS */}
           <div>
-            <h3 className="font-semibold mb-3 text-white!">Quick Links</h3>
+            <h3 className="font-semibold mb-3 text-white">Quick Links</h3>
 
-            <ul className="space-y-2 text-white/70!">
+            <ul className="space-y-2 text-white/70">
               <li>
-                <Link href="/" className="hover:text-pink-400! transition">
+                <Link href="/" className="hover:text-pink-400 transition">
                   Home
                 </Link>
               </li>
@@ -53,14 +53,14 @@ export default function Footer() {
               <li>
                 <Link
                   href="/download"
-                  className="hover:text-pink-400! transition"
+                  className="hover:text-pink-400 transition"
                 >
                   Download
                 </Link>
               </li>
 
               <li>
-                <Link href="/blog" className="hover:text-pink-400! transition">
+                <Link href="/blog" className="hover:text-pink-400 transition">
                   Poker Blog
                 </Link>
               </li>
@@ -68,7 +68,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/online-poker"
-                  className="hover:text-pink-400! transition"
+                  className="hover:text-pink-400 transition"
                 >
                   Online Poker
                 </Link>
@@ -78,13 +78,13 @@ export default function Footer() {
 
           {/* POPULAR PAGES */}
           <div>
-            <h3 className="font-semibold mb-3 text-white!">Popular Pages</h3>
+            <h3 className="font-semibold mb-3 text-white">Popular Pages</h3>
 
-            <ul className="space-y-2 text-white/70!">
+            <ul className="space-y-2 text-white/70">
               <li>
                 <Link
                   href="/nexa40"
-                  className="hover:text-pink-400! transition"
+                  className="hover:text-pink-400 transition"
                 >
                   Nexa40
                 </Link>
@@ -93,7 +93,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/nexa-40"
-                  className="hover:text-pink-400! transition"
+                  className="hover:text-pink-400 transition"
                 >
                   Nexa 40
                 </Link>
@@ -102,7 +102,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/nexa-poker-download"
-                  className="hover:text-pink-400! transition"
+                  className="hover:text-pink-400 transition"
                 >
                   Nexa Poker Download
                 </Link>
@@ -111,7 +111,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/poker-download"
-                  className="hover:text-pink-400! transition"
+                  className="hover:text-pink-400 transition"
                 >
                   Poker Download
                 </Link>
@@ -120,7 +120,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/wpt-global-alternative"
-                  className="hover:text-pink-400! transition"
+                  className="hover:text-pink-400 transition"
                 >
                   WPT Global Alternative
                 </Link>
@@ -130,23 +130,23 @@ export default function Footer() {
 
           {/* LEGAL */}
           <div>
-            <h3 className="font-semibold mb-3 text-white!">Legal</h3>
+            <h3 className="font-semibold mb-3 text-white">Legal</h3>
 
-            <ul className="space-y-2 text-white/70!">
+            <ul className="space-y-2 text-white/70">
               <li>
-                <Link href="/" className="hover:text-pink-400! transition">
+                <Link href="/" className="hover:text-pink-400 transition">
                   Privacy Policy
                 </Link>
               </li>
 
               <li>
-                <Link href="/" className="hover:text-pink-400! transition">
+                <Link href="/" className="hover:text-pink-400 transition">
                   Terms & Conditions
                 </Link>
               </li>
 
               <li>
-                <Link href="/" className="hover:text-pink-400! transition">
+                <Link href="/" className="hover:text-pink-400 transition">
                   Disclaimer
                 </Link>
               </li>
@@ -155,9 +155,9 @@ export default function Footer() {
 
           {/* CTA */}
           <div>
-            <h3 className="font-semibold mb-3 text-white!">Get Started</h3>
+            <h3 className="font-semibold mb-3 text-white">Get Started</h3>
 
-            <p className="text-white/70! mb-4 leading-relaxed">
+            <p className="text-white/70 mb-4 leading-relaxed">
               Download Nexa40 and start playing premium online poker instantly.
             </p>
 
@@ -176,7 +176,7 @@ export default function Footer() {
         <div className="border-t border-white/10 my-8"></div>
 
         {/* SEO TEXT */}
-        <div className="max-w-5xl mx-auto text-center text-sm text-white/60! leading-relaxed space-y-4">
+        <div className="max-w-5xl mx-auto text-center text-sm text-white/60 leading-relaxed space-y-4">
           <p>
             Nexa40 provides premium online poker gameplay with tournaments,
             smooth poker software, fast withdrawals, weekly rakeback rewards,
@@ -194,7 +194,7 @@ export default function Footer() {
         <div className="border-t border-white/10 my-8"></div>
 
         {/* BOTTOM */}
-        <div className="text-center text-sm text-white/60! space-y-2">
+        <div className="text-center text-sm text-white/60 space-y-2">
           <p>© {new Date().getFullYear()} Nexa40. All rights reserved.</p>
 
           <p className="text-xs max-w-2xl mx-auto leading-relaxed">

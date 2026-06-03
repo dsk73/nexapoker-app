@@ -1,10 +1,11 @@
+//nexapoker-app/components/sections/CTA.tsx
 "use client";
 
 import { motion } from "framer-motion";
 
 export default function CTA() {
   return (
-    <section className="relative py-16 px-6 overflow-hidden bg-[#0a0018]">
+    <section className="relative py-16 px-6 overflow-hidden bg-[#0a0018] text-white">
       {/* BACKGROUND GLOW */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute w-100 h-100 bg-pink-600/20 blur-[120px] -top-25 left-1/2 -translate-x-1/2" />
@@ -17,9 +18,9 @@ export default function CTA() {
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-white"
         >
-          <span className="text-white!">Ready to Start </span>
+          <span className="text-white">Ready to Start </span>
           <span className="bg-linear-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
             Winning?
           </span>
@@ -30,12 +31,29 @@ export default function CTA() {
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-white! mt-4 opacity-80 text-sm md:text-base"
+          className="text-white/80 mt-4 text-sm md:text-base"
         >
-          Join now and experience fast games, real players, and instant
-          withdrawals.
+          Join now and experience fast games, real players, instant withdrawals,
+          weekly rakeback rewards, and premium poker action.
         </motion.p>
 
+        {/* CTA BUTTON */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-8"
+        >
+          <a
+            href="https://t.me/nexapoker"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-pink-600 text-white px-8 py-3 rounded-xl font-medium hover:bg-pink-700 transition-all duration-300 shadow-lg shadow-pink-500/20"
+          >
+            Join Telegram Now
+          </a>
+        </motion.div>
       </div>
     </section>
   );

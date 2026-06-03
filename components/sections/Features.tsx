@@ -1,3 +1,4 @@
+//nexapoker-app/components/sections/Features.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -38,7 +39,10 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-24 px-6 bg-gray-50">
+    <section
+  id="features"
+  className="py-24 px-6 bg-gray-50 text-gray-900"
+>
       <div className="max-w-7xl mx-auto text-center">
         {/* HEADING */}
         <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-6">

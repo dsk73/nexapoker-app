@@ -1,3 +1,4 @@
+//nexapoker-app/components/sections/Testimonials.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -23,7 +24,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="relative py-16 px-6 overflow-hidden bg-[#0a0018]">
+    <section className="relative py-16 px-6 overflow-hidden bg-[#0a0018] text-white">
       {/* BACKGROUND */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute w-100 h-100 bg-pink-600/15 blur-[120px] -top-25 -right-25" />
@@ -36,16 +37,16 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white"
         >
-          <span className="text-white!">What Players </span>
+          <span className="text-white">What Players </span>
           <span className="bg-linear-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
             Say
           </span>
         </motion.h2>
 
         {/* SUBTEXT */}
-        <p className="text-white! max-w-xl mx-auto mb-10 opacity-80 text-sm md:text-base">
+        <p className="text-white/80 max-w-xl mx-auto mb-10 text-sm md:text-base">
           Trusted by thousands of players across the country.
         </p>
 
@@ -72,7 +73,7 @@ export default function Testimonials() {
                 />
 
                 <div>
-                  <h4 className="text-white! font-semibold text-sm">
+                  <h4 className="text-white font-semibold text-sm">
                     {item.name}
                   </h4>
 
@@ -81,7 +82,7 @@ export default function Testimonials() {
               </div>
 
               {/* REVIEW */}
-              <p className="text-white! text-sm leading-normal opacity-90">
+              <p className="text-white/90 text-sm leading-normal">
                 {item.review}
               </p>
             </motion.div>

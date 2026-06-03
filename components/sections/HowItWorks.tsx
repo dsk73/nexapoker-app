@@ -1,3 +1,4 @@
+//nexapoker-app/components/sections/HowItWorks.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -38,7 +39,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 px-6 bg-white">
+    <section className="py-24 px-6 bg-white text-gray-900">
       <div className="max-w-7xl mx-auto">
         {/* HEADING */}
         <div className="text-center mb-14">
